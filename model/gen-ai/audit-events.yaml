@@ -7,11 +7,8 @@ groups:
     note: |
       These attributes MAY be recorded on any GenAI audit event when applicable.
       Event-specific semantic convention groups below define the additional
-      attributes that are expected for each `event.name`.
+      attributes that are expected for each audit event.
     attributes:
-      - ref: event.name
-        requirement_level:
-          conditionally_required: when the event name is not otherwise represented by the telemetry data model
       - ref: gen_ai.session.id
         requirement_level:
           conditionally_required: when the GenAI application maintains session context
@@ -19,7 +16,7 @@ groups:
         requirement_level: recommended
       - ref: gen_ai.step.id
         requirement_level: recommended
-      - ref: event.id
+      - ref: gen_ai.event.id
         requirement_level:
           conditionally_required: when the source runtime provides a stable event identifier
       - ref: gen_ai.event.original_name

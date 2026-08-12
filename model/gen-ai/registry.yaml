@@ -1155,6 +1155,15 @@ groups:
           This attribute SHOULD be set to `true` only on the event that marks
           the end of a turn. It SHOULD be omitted when false or unknown.
         examples: [true]
+      - id: gen_ai.event.id
+        stability: development
+        type: string
+        brief: The unique identifier of a GenAI event in the source runtime.
+        note: >
+          This attribute represents an identifier assigned by the originating
+          system, not by OpenTelemetry. It can be used to correlate GenAI events
+          across log records or to deduplicate events from the same source.
+        examples: ['evt_01J2K3M4N5P6Q7R8S9T0']
       - id: gen_ai.event.original_name
         stability: development
         type: string
